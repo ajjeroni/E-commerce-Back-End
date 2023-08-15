@@ -15,8 +15,6 @@ router.get('/', (req, res) => {
   })
     .then((model) => res.json(model))
     .catch(err => res.json(err))
-  // model: Product
-  // through productTag
 });
 
 router.get('/:id', (req, res) => {
@@ -25,31 +23,43 @@ router.get('/:id', (req, res) => {
   Tag.findOne({
     where: {
       id: req.params.id
+    },
+    include: {
+      model: Product,
+      through: ProductTag
     }
-    // ,
-    // include: {
-    //   model: Product,
-    //   through: ProductTag
-    // }
   })
-  // where: 
-  // model: Product
-  // through productTag
+  .then((data) => res.json(data))
+  .catch(err => res.json(err));
 });
 
 router.post('/', (req, res) => {
   // create a new tag
-  Tag.create
+  Tag.create(req.body)
+  .then((data) => res.json(data))
+  .catch(err => res.json(err));
 });
 
 router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
-  Tag.update
+  Tag.update(req.body, {
+    where: {
+      id:req.params.id
+    }
+  })
+  .then((data) => res.json(data))
+  .catch(err => res.json(err));
 });
 
 router.delete('/:id', (req, res) => {
   // delete on tag by its `id` value
-  Tag.destroy
+  Tag.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+  .then((data) => res.json(data))
+  .catch(err => res.json(err));
 });
 
 module.exports = router;

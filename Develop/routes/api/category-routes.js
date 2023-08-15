@@ -16,19 +16,6 @@ router.get('/', async (req, res) => {
   })
     .then((model) => res.json(model))
     .catch(err => res.json(err))
-  // try {
-  //   const categories = await Category.findAll({
-  //     include: [Product],
-  //   });
-  //   if (!categories) {
-  //     console.log("no");
-  //     return;
-  //   }
-  //   console.log(categories);
-  //   res.json(categories);
-  // } catch (err) {
-  //   res.json(err);
-  // }
 });
 
 router.get('/:id', (req, res) => {
