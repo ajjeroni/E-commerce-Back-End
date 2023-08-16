@@ -25,9 +25,8 @@ open insomnia and run routes as desired
 
 ## Links
 
-Click this link to access [video](https://drive.google.com/file/d/18z0kcjfZ7j4HkD69xyBM_pfgjFdXR2mD/view)
+Click this link to access [video](https://drive.google.com/file/d/1WW6C_fWZzYpmmmAc2MP6KQX-dR0776Yf/view)
 
-During the recording I run into a small problem with a put route for categories, I fix it during the recording. 
 
 ## Credits
 
